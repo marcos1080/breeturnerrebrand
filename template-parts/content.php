@@ -27,7 +27,13 @@
                     get_the_title()
                 ) );
             
-                if( get_post_type() === 'audio' ) : ?>
+                if( get_post_type() === 'audio' ) : 
+                    $audio_url = '';
+                    if( get_post_meta( get_the_ID(), 'action', true ) == 'url' ) {
+                        $audio_url = get_post_meta( get_the_ID(), 'value', true );
+                    } else if( get_post_meta( get_the_ID(), 'action', true ) == 'file' ) {
+                        $audio_url = wp_get_attachment_url( get_post_meta( get_the_ID(), 'value', true ) );
+                    } ?>
                     <div id="audio-player">
                         <?php echo do_shortcode( "[audio src='$audio_url']" ); ?>
                     </div>
