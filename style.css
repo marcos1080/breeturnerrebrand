@@ -264,7 +264,7 @@ input,
 select,
 optgroup,
 textarea {
-	color: #404040;
+	color: #530304;
 	font-family: sans-serif;
 	font-size: 16px;
 	font-size: 1rem;
@@ -711,10 +711,6 @@ a:hover, a:active {
 	display: block;
 }
 
-.hentry {
-	margin: 0 0 1.5em;
-}
-
 .updated:not(.published) {
 	display: none;
 }
@@ -863,20 +859,33 @@ object {
  */
 
 @font-face {
-	font-family: "Libre Baskerville";
-	src: url("fonts/libre-baskerville/LibreBaskerville-Regular.otf");
-}
-
-@font-face {
 	font-family: "Montserrat";
 	src: url("fonts/montserrat/Montserrat-Regular.otf");
 }
 
 h1, h2, h3, h4, h5, h6 {
-    font-family: "Libre Baskerville";
+    font-family: "Cinzel";
     font-weight: 200;
     text-align: center;
     color: #920e0c;
+}
+
+h1 {
+    font-size: 2.6em;
+}
+
+h2 {
+    font-size: 2em;
+    margin-top: 20px;
+}
+
+h3 {
+    font-size: 1.6em;
+}
+
+.site-title {
+    font-size: 1.8em;
+    margin-bottom: 0px;
 }
 
 p {
@@ -917,7 +926,7 @@ body {
 }
 
 .content-width-home {
-    width: 60%;
+    width: 960px;
     margin: auto;
 }
 
@@ -942,11 +951,15 @@ body {
 }
 
 .left-column {
-    width: 40%;
+    width: 30%;
 }
 
 .right-column {
-    width: 60%;
+    width: 70%;
+}
+
+.left-column p {
+    padding-right: 30px;
 }
 
 #portfolio span {
@@ -967,4 +980,40 @@ body {
 
 .social-icon:hover .social-main {
     display: none;
+}
+
+/**
+ *  Posts
+ */
+.post-wrapper {
+    width: 960px;
+    margin: auto;
+    position: relative;
+    margin-bottom: 100px;
+}
+
+.post-wrapper .entry-title {
+    margin-bottom: 40px;
+}
+
+.back-link {
+    margin-top: 0px;
+}
+
+.prev-post {
+    position: absolute;
+    bottom: 0px;
+    width: 30%;
+    box-sizing: border-box;
+}
+
+.post-wrapper img {
+    width: 100%;
+}
+
+/**
+ *  Footer
+ */
+footer p {
+    text-align: right;
 }
