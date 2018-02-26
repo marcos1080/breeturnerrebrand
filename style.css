@@ -1011,6 +1011,10 @@ body {
     width: 100%;
 }
 
+#audio-player {
+    margin-bottom: 24px;
+}
+
 /**
  *  Footer
  */
