@@ -15,7 +15,7 @@
 
 	<footer id="colophon" class="site-footer">
 		<div class="site-info content-width-home">
-                        <p>&copy; <?php echo date( 'Y' ); ?>, Bree Turner, Site by Mark Stuart</p>
+                    <p>&copy; <?php echo date( 'Y' ); ?>, Bree Turner, Site by <a href="https://www.mark-stuart.me">Mark Stuart</a></p>
 		</div><!-- .site-info -->
 	</footer><!-- #colophon -->
 </div><!-- #page -->

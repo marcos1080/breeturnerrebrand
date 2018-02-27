@@ -70,16 +70,18 @@ get_header(); ?>
                 if( is_front_page() ) : ?>
                     <div id="portfolio" class="content-width-home">
                         <div class="left-column">
-                            <h2>Portfolio</h2>
-                            <?php
-                                $cv_id = esc_attr( get_option('bree_turner_v2_CV') );
-                                if( $cv_id !== '' ) : ?>
-                            <p>
-                                --<a href="<?php echo wp_get_attachment_url( $cv_id ); ?>">CV</a>--
-                            </p>
+                            <div id="cv-container">
+                                <h2>Portfolio</h2>
                                 <?php
-                                endif;
-                            ?>
+                                    $cv_id = esc_attr( get_option('bree_turner_v2_CV') );
+                                    if( $cv_id !== '' ) : ?>
+                                <p>
+                                    --<a href="<?php echo wp_get_attachment_url( $cv_id ); ?>">CV</a>--
+                                </p>
+                                    <?php
+                                    endif;
+                                ?>
+                            </div>
                         </div><!--
                      --><div class="right-column">
                             <?php
@@ -91,18 +93,26 @@ get_header(); ?>
                             
                                 if( $query->have_posts() ) : ?>
                             <h3><?php echo $heading; ?></h3>
+                            <table>
                                 <?php
                                     while ( $query->have_posts() ) :
                                         $query->the_post();
-                                        $date = get_the_date( "Y M j", "", "", false ); ?>
-                                        <p><span><?php echo $date; ?></span>
-                                            <a href="<?php echo get_permalink(); ?>"><?php the_title(); ?></a>
-                                        </p>
+                                        $date = get_the_date( "Y M", "", "", false ); ?>
+                                        <tr>
+                                            <td class="date"><p><?php echo $date; ?></p></td>
+                                            <td><p><a href="<?php echo get_permalink(); ?>"><?php the_title(); ?></a></p></td>
+                                        </tr>
                                         <?php
                                     endwhile;
                                 endif;
-                                wp_reset_query();
+                                wp_reset_query(); ?>
+                            </table>
+                            <?php
                             endforeach; ?>
+                            <h3>Appearances</h3>
+                            <p>
+                                <a href="https://www.youtube.com/watch?v=tQIzdGsF-ss">Sex, Drugs & Rock 'n' Roll: The Orgasm Gap – Bree Turner at Real Big Things 18</a>
+                            </p>
                         </div>
                     </div>
                     <div id="contact" class="content-width-home">
