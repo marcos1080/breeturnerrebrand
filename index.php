@@ -100,7 +100,11 @@ get_header(); ?>
                                         $date = get_the_date( "Y M", "", "", false ); ?>
                                         <tr>
                                             <td class="date"><p><?php echo $date; ?></p></td>
-                                            <td><p><a href="<?php echo get_permalink(); ?>"><?php the_title(); ?></a></p></td>
+                                            <td>
+                                                <p>
+                                                    <a href="<?php echo get_permalink(); ?>"><?php the_title(); ?></a>
+                                                </p>
+                                            </td>
                                         </tr>
                                         <?php
                                     endwhile;
@@ -110,9 +114,14 @@ get_header(); ?>
                             <?php
                             endforeach; ?>
                             <h3>Appearances</h3>
-                            <p>
-                                <a href="https://www.youtube.com/watch?v=tQIzdGsF-ss">Sex, Drugs & Rock 'n' Roll: The Orgasm Gap – Bree Turner at Real Big Things 18</a>
-                            </p>
+                            <table>
+                                <td class="date"><p>2018</p></td>
+                                <td>
+                                    <p>
+                                        <a href="https://www.youtube.com/watch?v=tQIzdGsF-ss">Sex, Drugs & Rock 'n' Roll: The Orgasm Gap – Bree Turner at Real Big Things 18</a>
+                                    </p>
+                                </td>
+                            </table>
                         </div>
                     </div>
                     <div id="contact" class="content-width-home">
@@ -122,7 +131,9 @@ get_header(); ?>
                      --><div class="right-column">
                             <h3>General Enquiries:</h3>
                             <?php $email = get_bloginfo( 'admin_email' ); ?>
-                            <a href="mailto:<?php echo $email; ?>?Subject=Bree%20Turner%20Website%20Enquiry" target="_top"><?php echo $email; ?></a>
+                            <p>
+                                <a href="mailto:<?php echo $email; ?>?Subject=Bree%20Turner%20Website%20Enquiry" target="_top"><?php echo $email; ?></a>
+                            </p>
                             <h3>Social Media</h3>
                             <div id="social-icons">
                                 <div  class="social-icon">
