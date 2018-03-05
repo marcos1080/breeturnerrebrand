@@ -858,13 +858,8 @@ object {
  *  Fonts.
  */
 
-@font-face {
-	font-family: "Montserrat";
-	src: url("fonts/montserrat/Montserrat-Regular.otf");
-}
-
 h1, h2, h3, h4, h5, h6 {
-    font-family: "Fira Sans";
+    font-family: "Cardo", serif;
     font-weight: 200;
     text-align: center;
     color: #920e0c;
@@ -891,7 +886,7 @@ h3 {
 }
 
 p {
-    font-family: "Montserrat";
+    font-family: "Josefin Sans", sans-serif;
     color: #530304;
 }
 
@@ -916,6 +911,7 @@ body {
     
     h2 {
         font-size: 2.47vw;
+        margin-top: 1.5625vw;
     }
     
     h3 {
@@ -955,21 +951,19 @@ body {
     display: block;
 }
 
-#portfolio,
-#contact {
-    margin: 100px 20px;
+#portfolio {
+    background: white;
 }
 
-#portfolio {
-    margin-top: 50px;
+#portfolio .content {
+    padding: 50px 20px;
 }
 
 #portfolio h3 {
     text-align: left;
 }
 
-#portfolio .left-column p,
-#contact {
+#portfolio .left-column p {
     text-align:  center;
 }
 
@@ -988,26 +982,6 @@ body {
 
 #portfolio .date {
     width: 110px;
-}
-
-#contact p {
-    font-size: 1.2em;
-}
-
-.social-icon {
-    position: relative;
-    display: inline-block;
-    width: 45px;
-}
-
-.social-main {
-    position: absolute;
-    top: 0px;
-    left: 0px;
-}
-
-.social-icon:hover .social-main {
-    display: none;
 }
 
 @media screen and ( max-width: 470px ) {
@@ -1034,14 +1008,13 @@ body {
         font-size: 1.8em;
     }
 
-    #portfolio, #portfolio h2, #portfolio h3,
-    #contact, #contact h2, #contact h3 {
+    #portfolio, #portfolio h2, #portfolio h3 {
         text-align: left;
     }
 
     #portfolio .left-column p {
         text-align: left;
-        left: 38px;
+        left: 35px;
     }
 
     .left-column,
@@ -1081,10 +1054,10 @@ body {
         height: 45vw;
     }
     
-    #portfolio,
-    #contact {
+    #portfolio .content,
+    #contact, .site-info {
         width: 960px;
-        margin: 100px auto;
+        margin: auto;
     }
 }
 
@@ -1093,26 +1066,18 @@ body {
         font-size: 2.223vw;
     }
     
-    #portfolio,
-    #contact {
+    #portfolio .content,
+    #contact, .site-info {
         width: 75%;
     }
     
     #portfolio .left-column p {
         top: -1.5625vw;
-        left: 2.96875vw;
+        left: 2.734375vw;
     }
     
     #portfolio .date {
         width: 11.71875vw;
-    }
-    
-    #contact p {
-        font-size: 1.482vw;
-    }
-
-    .social-icon {
-        width: 3.515625vw;
     }
 }
 
@@ -1171,13 +1136,98 @@ body {
 /**
  *  Footer
  */
-footer p {
+footer {
     text-align: center;
+}
+
+footer p {
     font-size: 0.9em;
+}
+
+#contact {
+    position: relative;
+    margin: 10px 0px 40px;
+}
+
+#contact h3, #contact p {
+    display: inline-block;
+}
+
+#contact p {
+    font-size: 1.2em;
+    padding-left: 10px;
+}
+
+.social-icon {
+    position: relative;
+    display: inline-block;
+    width: 45px;
+}
+
+.social-main {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+}
+
+.social-icon:hover .social-main {
+    display: none;
+}
+
+@media screen and ( min-width: 740px ) {
+    footer {
+        text-align: left;
+    }
+    
+    footer p {
+        padding-left: 20px;
+    }
+    
+    #contact {
+        margin: 30px 20px 0px;
+    }
+    
+    #social-icons {
+        position: absolute;
+        top: 50%;
+        right: 20px;
+        transform: translateY( -50% );
+        -o-transform: translateY( -50% );
+        -ms-transform: translateY( -50% );
+        -moz-transform: translateY( -50% );
+        -webkit-transform: translateY( -50% );
+    }
+}
+
+@media screen and ( min-width: 1000px ) {
+    #contact {
+        margin: 30px auto 0px;
+    }
+    
+    #social-icons {
+        right: 0px;
+    }
+    
+    footer p {
+        padding: 0;
+    }
 }
 
 @media screen and ( min-width: 1280px ) {
     footer p {
         font-size: 1.112vw;
+    }
+      
+    #contact {
+        margin-top: 2.34375vw;
+    }
+    
+    #contact p {
+        font-size: 1.482vw;
+        padding-left: 0.78125vw;
+    }
+
+    .social-icon {
+        width: 3.515625vw;
     }
 }

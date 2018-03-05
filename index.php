@@ -56,10 +56,6 @@ get_header(); ?>
                         if( ! is_front_page() ) :
                             the_posts_navigation();
                         endif;
-		else :
-
-			get_template_part( 'template-parts/content', 'none' );
-
 		endif; 
                 
                 $categories = array(
@@ -69,105 +65,69 @@ get_header(); ?>
                 
                 if( is_front_page() ) : ?>
                     <div id="portfolio" class="content-width-home">
-                        <div class="left-column">
-                            <div id="cv-container">
-                                <h2>Portfolio</h2>
-                                <?php
-                                    $cv_id = esc_attr( get_option('bree_turner_v2_CV') );
-                                    if( $cv_id !== '' ) : ?>
-                                <p>
-                                    --<a href="<?php echo wp_get_attachment_url( $cv_id ); ?>">CV</a>--
-                                </p>
+                        <div class="content">
+                            <div class="left-column">
+                                <div id="cv-container">
+                                    <h2>Portfolio</h2>
                                     <?php
-                                    endif;
-                                ?>
-                            </div>
-                        </div><!--
-                     --><div class="right-column">
-                            <?php
-                            foreach( $categories as $heading => $post_type ) :
-                                $query = new WP_Query( array(
-                                    'post_type'         => array( $post_type ),
-                                    'posts_per_page'    => -1,
-                                ));
-                            
-                                if( $query->have_posts() ) : ?>
-                            <h3><?php echo $heading; ?></h3>
-                            <table>
-                                <?php
-                                    while ( $query->have_posts() ) :
-                                        $query->the_post();
-                                        $date = get_the_date( "Y M", "", "", false ); ?>
-                                        <tr>
-                                            <td class="date"><p><?php echo $date; ?></p></td>
-                                            <td>
-                                                <p>
-                                                    <a href="<?php echo get_permalink(); ?>"><?php the_title(); ?></a>
-                                                </p>
-                                            </td>
-                                        </tr>
-                                        <?php
-                                    endwhile;
-                                endif;
-                                wp_reset_query(); ?>
-                            </table>
-                            <?php
-                            endforeach; ?>
-                            <h3>Appearances</h3>
-                            <table>
-                                <td class="date"><p>2018</p></td>
-                                <td>
+                                        $cv_id = esc_attr( get_option('bree_turner_v2_CV') );
+                                        if( $cv_id !== '' ) : ?>
                                     <p>
-                                        <a href="https://www.youtube.com/watch?v=tQIzdGsF-ss">Sex, Drugs & Rock 'n' Roll: The Orgasm Gap – Bree Turner at Real Big Things 18</a>
+                                        --<a href="<?php echo wp_get_attachment_url( $cv_id ); ?>">CV</a>--
                                     </p>
-                                </td>
-                            </table>
-                        </div>
-                    </div>
-                    <div id="contact" class="content-width-home">
-                        <div class="left-column">
-                            <h2>Contact</h2>
-                        </div><!--
-                     --><div class="right-column">
-                            <h3>General Enquiries:</h3>
-                            <?php $email = get_bloginfo( 'admin_email' ); ?>
-                            <p>
-                                <a href="mailto:<?php echo $email; ?>?Subject=Bree%20Turner%20Website%20Enquiry" target="_top"><?php echo $email; ?></a>
-                            </p>
-                            <h3>Social Media</h3>
-                            <div id="social-icons">
-                                <div  class="social-icon">
-                                    <a  class="social-main" href="https://www.facebook.com/breeturnerwriter/">
-                                        <img src="<?php echo get_template_directory_uri() . "/images/icons/facebook.svg" ?>" alt="Facebook Icon"/>
-                                    </a>
-                                    <a href="https://www.facebook.com/breeturnerwriter/">
-                                        <img src="<?php echo get_template_directory_uri() . "/images/icons/facebook_hover.svg" ?>" alt="Facebook Icon"/>
-                                    </a>
+                                        <?php
+                                        endif;
+                                    ?>
                                 </div>
-                                <div  class="social-icon">
-                                    <a  class="social-main" href="https://www.twitter.com/breekturner/">
-                                        <img src="<?php echo get_template_directory_uri() . "/images/icons/twitter.svg" ?>" alt="Twitter Icon"/>
-                                    </a>
-                                    <a href="https://www.twitter.com/breekturner/">
-                                        <img src="<?php echo get_template_directory_uri() . "/images/icons/twitter_hover.svg" ?>" alt="Twitter Icon"/>
-                                    </a>
-                                </div>
-                                <div  class="social-icon">
-                                    <a  class="social-main" href="https://www.instagram.com/breekturner/">
-                                        <img src="<?php echo get_template_directory_uri() . "/images/icons/instagram.svg" ?>" alt="Instagram Icon"/>
-                                    </a>
-                                    <a href="https://www.instagram.com/breekturner/">
-                                        <img src="<?php echo get_template_directory_uri() . "/images/icons/instagram_hover.svg" ?>" alt="Instagram Icon"/>
-                                    </a>
-                                </div>
-                                <div  class="social-icon">
-                                    <a  class="social-main" href="https://au.linkedin.com/in/bree-turner-9055b6a7">
-                                        <img src="<?php echo get_template_directory_uri() . "/images/icons/linkedin.svg" ?>" alt="Linked-In Icon"/>
-                                    </a>
-                                    <a href="https://au.linkedin.com/in/bree-turner-9055b6a7">
-                                        <img src="<?php echo get_template_directory_uri() . "/images/icons/linkedin_hover.svg" ?>" alt="Linked-In Icon"/>
-                                    </a>
-                                </div>
+                            </div><!--
+                         --><div class="right-column">
+                                <?php
+                                foreach( $categories as $heading => $post_type ) :
+                                    $query = new WP_Query( array(
+                                        'post_type'         => array( $post_type ),
+                                        'posts_per_page'    => -1,
+                                    ));
+
+                                    if( $query->have_posts() ) : ?>
+                                <h3><?php echo $heading; ?></h3>
+                                <table>
+                                    <?php
+                                        while ( $query->have_posts() ) :
+                                            $query->the_post();
+                                            $date = get_the_date( "Y M", "", "", false ); ?>
+                                            <tr>
+                                                <td class="date"><p><?php echo $date; ?></p></td>
+                                                <td>
+                                                    <p>
+                                                        <a href="<?php echo get_permalink(); ?>"><?php the_title(); ?></a>
+                                                    </p>
+                                                </td>
+                                            </tr>
+                                            <?php
+                                        endwhile;
+                                    endif;
+                                    wp_reset_query(); ?>
+                                </table>
+                                <?php
+                                endforeach; ?>
+                                <h3>Appearances</h3>
+                                <table>
+                                    <td class="date"><p>2018</p></td>
+                                    <td>
+                                        <p>
+                                            <a href="https://www.youtube.com/watch?v=tQIzdGsF-ss">Sex, Drugs & Rock 'n' Roll: The Orgasm Gap – Bree Turner at Real Big Things 18</a>
+                                        </p>
+                                    </td>
+                                </table>
+                                <h3>Zines</h3>
+                                <table>
+                                    <td class="date"><p>2018</p></td>
+                                    <td>
+                                        <p>
+                                            <a href="https://www.etsy.com/au/shop/bbzines/">bbzines Etsy store</a>
+                                        </p>
+                                    </td>
+                                </table>
                             </div>
                         </div>
                     </div>
