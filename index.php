@@ -112,10 +112,10 @@ get_header(); ?>
                                 endforeach; ?>
                                 <h3>Appearances</h3>
                                 <table>
-                                    <td class="date"><p>2018</p></td>
+                                    <td class="date"><p>2017</p></td>
                                     <td>
                                         <p>
-                                            <a href="https://www.youtube.com/watch?v=tQIzdGsF-ss">Sex, Drugs & Rock 'n' Roll: The Orgasm Gap – Bree Turner at Real Big Things 18</a>
+                                            <a href="https://www.youtube.com/watch?v=tQIzdGsF-ss">Real Big Things: Sex, Drugs & Rock n Roll 'The Orgasm Gap'</a>
                                         </p>
                                     </td>
                                 </table>

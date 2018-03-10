@@ -885,9 +885,13 @@ h3 {
     margin-top: 5px;
 }
 
-p {
+p, li {
     font-family: "Josefin Sans", sans-serif;
     color: #530304;
+}
+
+.single p {
+    text-align: justify;
 }
 
 body {
@@ -918,7 +922,7 @@ body {
         font-size: 1.976vw;
     }
     
-    p {
+    p, li {
         font-size: 1.235vw;
     }
 }
@@ -1086,7 +1090,7 @@ body {
  */
 .post-wrapper {
     position: relative;
-    margin-bottom: 100px;
+    margin-bottom: 30px;
 }
 
 .post-wrapper .entry-title {
@@ -1095,7 +1099,7 @@ body {
     margin-right: 20px;
 }
 
-.post {
+.post, .audio {
      margin: 0px 20px;
 }
 
@@ -1121,14 +1125,14 @@ body {
 }
 
 @media screen and ( min-width: 600px ) {
-    .post {
+    .post, .audio {
         width: 560px;
         margin: auto;
    }
 }
 
 @media screen and ( min-width: 1280px ) {
-    .post {
+    .post, .audio {
         width: 43.75%;
    }
 }
@@ -1153,9 +1157,14 @@ footer p {
     display: inline-block;
 }
 
+#contact h3 {
+    margin-bottom: 10px;
+}
+
 #contact p {
     font-size: 1.2em;
     padding-left: 10px;
+    margin-top: 0px;
 }
 
 .social-icon {
@@ -1174,6 +1183,31 @@ footer p {
     display: none;
 }
 
+.single footer p {
+    text-align: center;
+}
+
+@media screen and ( min-width: 600px ) {
+    .single footer,
+    .error404 footer{
+        width: 560px;
+        margin: auto;
+    }
+   
+   .single #contact,
+   .error404 #contact{
+       margin-left: 0;
+       margin-right: 0;
+       width: auto;
+   }
+   
+   .single footer p,
+   .error404 footer p{
+       padding: 0;
+       text-align: left;
+   }
+}
+
 @media screen and ( min-width: 740px ) {
     footer {
         text-align: left;
@@ -1190,7 +1224,7 @@ footer p {
     #social-icons {
         position: absolute;
         top: 50%;
-        right: 20px;
+        right: 0px;
         transform: translateY( -50% );
         -o-transform: translateY( -50% );
         -ms-transform: translateY( -50% );
@@ -1214,12 +1248,24 @@ footer p {
 }
 
 @media screen and ( min-width: 1280px ) {
+    .single footer,
+    .error404 footer{
+        width: 43.75%;
+    }
+    
     footer p {
         font-size: 1.112vw;
     }
-      
+    
     #contact {
         margin-top: 2.34375vw;
+    }
+    
+    .single #contact,
+    .error404 #contact,
+    .single .site-info,
+    .error404 .site-info{
+        width: 100%;
     }
     
     #contact p {
@@ -1230,4 +1276,11 @@ footer p {
     .social-icon {
         width: 3.515625vw;
     }
+}
+
+/**
+ * 404
+ */
+.error-404 {
+    text-align: center;
 }
