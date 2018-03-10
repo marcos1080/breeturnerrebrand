@@ -219,3 +219,7 @@ function bree_turner_v2_register_settings() {
    register_setting( 'bree_turner_v2_CV_group', 'bree_turner_v2_CV' );
 }
 add_action( 'admin_init', 'bree_turner_v2_register_settings' );
+
+@ini_set( 'upload_max_size' , '64M' );
+@ini_set( 'post_max_size', '64M');
+@ini_set( 'max_execution_time', '300' );
