@@ -1121,6 +1121,7 @@ body {
 }
 
 #audio-player {
+    display: none;
     margin-bottom: 24px;
 }
 
