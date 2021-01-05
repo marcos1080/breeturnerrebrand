@@ -1111,10 +1111,6 @@ header {
     #portfolio .date {
         width: 150px;
     }
-    
-    .bio-image {
-        height: 55vw;
-    }
 }
 
 @media screen and ( min-width: 1000px ) {
