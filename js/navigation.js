@@ -1,5 +1,13 @@
 jQuery( function ( $ ) {
 	$(document).ready(function () {
+		$('body').click(function() {
+			$('#menu-dropdown').toggle(200);
+		});
+
+		$('#menu').click(function(event) {
+			event.stopPropagation();
+		});
+
 		$('#menu-toggle').click(function() {
 			$('#menu-dropdown').toggle(200);
 		})
