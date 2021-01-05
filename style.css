@@ -1115,15 +1115,6 @@ header {
     .bio-image {
         height: 55vw;
     }
-    
-    .bio-image img {
-        top: 50%;
-        transform: translateY( -50% );
-        -o-transform: translateY( -50% );
-        -ms-transform: translateY( -50% );
-        -moz-transform: translateY( -50% );
-        -webkit-transform: translateY( -50% );
-    }
 }
 
 @media screen and ( min-width: 1000px ) {
