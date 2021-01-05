@@ -117,9 +117,11 @@ add_action( 'widgets_init', 'bree_turner_v2_widgets_init' );
  * Enqueue scripts and styles.
  */
 function bree_turner_v2_scripts() {
+	wp_enqueue_script('jquery');
+	
 	wp_enqueue_style( 'bree-turner-v2-style', get_stylesheet_uri() );
 
-        wp_enqueue_script( 'bree-turner-v2-imagelinker', get_template_directory_uri() . '/js/imagelinker.js', array(), '20180310', true );
+    wp_enqueue_script( 'bree-turner-v2-imagelinker', get_template_directory_uri() . '/js/imagelinker.js', array(), '20180310', true );
         
 	wp_enqueue_script( 'bree-turner-v2-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
 

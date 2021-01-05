@@ -22,14 +22,6 @@
                     </p>
                     <div id="social-icons">
                         <div  class="social-icon">
-                            <a  class="social-main" href="https://www.facebook.com/breeturnerwriter/">
-                                <img src="<?php echo get_template_directory_uri() . "/images/icons/facebook.svg" ?>" alt="Facebook Icon"/>
-                            </a>
-                            <a href="https://www.facebook.com/breeturnerwriter/">
-                                <img src="<?php echo get_template_directory_uri() . "/images/icons/facebook_hover.svg" ?>" alt="Facebook Icon"/>
-                            </a>
-                        </div>
-                        <div  class="social-icon">
                             <a  class="social-main" href="https://www.twitter.com/breekturner/">
                                 <img src="<?php echo get_template_directory_uri() . "/images/icons/twitter.svg" ?>" alt="Twitter Icon"/>
                             </a>

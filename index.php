@@ -31,18 +31,17 @@ get_header(); ?>
 			/* Start the Loop */
 			while ( have_posts() ) : the_post();
                                 if( is_front_page() ) :
-                                    // Print the home page content. ?>
-                                    <div class="top-block-text">
-                                        <?php the_content(); ?>
-                                    </div>
-                                    <?php
                                     if ( get_header_image() ) : ?>
                                         <div class="bio-image">			
                                                 <img src="<?php echo header_image(); ?>" alt="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>">
                                         </div>
                                     <?php 
                                     endif;
-                                else :
+                                    // Print the home page content. ?>
+                                    <div class="top-block-text">
+                                        <?php the_content(); ?>
+                                    </div>
+                                <?php else :
                                     /*
                                      * Include the Post-Format-specific template for the content.
                                      * If you want to override this in a child theme, then include a file

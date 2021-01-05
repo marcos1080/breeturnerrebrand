@@ -26,6 +26,22 @@
 		<div class="site-branding">
 			<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
 		</div><!-- .site-branding -->
+		<div id="menu">
+			<img id="menu-toggle" src="<?php echo get_template_directory_uri() . "/images/icons/menu.svg" ?>" alt="Menu Icon"/>
+			<div id="menu-dropdown">
+				<ul>
+					<li>
+						<a href="#about">About</a>
+					</li>
+					<li>
+						<a href="#portfolio">Work</a>
+					</li>
+					<li>
+						<a href="#contact">Contact</a>
+					</li>
+				</ul>
+			</div>
+		</div>
 	</header><!-- #masthead -->
 
 	<div id="content" class="site-content">
