@@ -31,13 +31,16 @@
 			<div id="menu-dropdown">
 				<ul>
 					<li>
-						<a href="#about">About</a>
+						<a href="<?php echo esc_url( home_url( '/' ) ); ?>">Home</a>
 					</li>
 					<li>
-						<a href="#portfolio">Work</a>
+						<a class="scroll-tag" href="#about">About</a>
 					</li>
 					<li>
-						<a href="#contact">Contact</a>
+						<a class="scroll-tag" href="#portfolio">Work</a>
+					</li>
+					<li>
+						<a class="scroll-tag" href="#contact">Contact</a>
 					</li>
 				</ul>
 			</div>

@@ -12,7 +12,7 @@ jQuery( function ( $ ) {
 			$('#menu-dropdown').toggle(200);
 		})
 
-		$('#menu-dropdown a').click(function(event) {
+		$('#menu-dropdown .scroll-tag').click(function(event) {
 			event.preventDefault();
 
 			var id = $(this).attr('href');
@@ -22,7 +22,7 @@ jQuery( function ( $ ) {
 				var offset = 50;
 
 				$('html, body').animate({
-					scrollTop: $(id).offset().top + offset
+					scrollTop: $(id).offset().top - offset
 				}, 500);
 
 				$('#menu-dropdown').toggle(200);

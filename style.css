@@ -1270,7 +1270,7 @@ footer {
 }
 
 footer p {
-    font-size: 0.9em;
+	font-size: 0.9em;
 }
 
 #contact {
@@ -1308,6 +1308,10 @@ footer p {
     display: none;
 }
 
+footer .site-info p {
+	text-align: center;
+}
+
 @media screen and ( min-width: 740px ) {
     footer {
         text-align: left;
@@ -1334,10 +1338,6 @@ footer p {
 @media screen and ( min-width: 1000px ) {   
     footer p {
         padding: 0;
-	}
-	
-	.site-info {
-		padding-left: 20px;
 	}
 }
 
