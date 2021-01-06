@@ -19,7 +19,7 @@ jQuery( function ( $ ) {
 
 			if ($(id).length) {
 				// Scroll to section
-				var offset = 20;
+				var offset = 50;
 
 				$('html, body').animate({
 					scrollTop: $(id).offset().top + offset
